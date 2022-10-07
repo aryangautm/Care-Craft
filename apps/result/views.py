@@ -8,11 +8,15 @@ from apps.students.models import Student
 
 from .forms import CreateResults, EditResults
 from .models import Result
+import random
+
+
 
 
 @login_required
 def create_result(request):
     students = Student.objects.all()
+    # randomT = random.choice(["0", "1"])
     if request.method == "POST":
 
         # after visiting the second page

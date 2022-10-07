@@ -8,5 +8,16 @@ class EditorChartView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["qs"] = Student.objects.all()
+        allObjects = Student.objects.all()
+        # onlyRoes
+
+        context = {
+            "qs" : allObjects,
+            # "ks" : 
+        }
+
         return context
+        # print(context)
+
+    # def testing(request):
+    #     myData = Student.objects.filter()

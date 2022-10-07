@@ -7,9 +7,9 @@
 $(document).ready(function(){
         var ctx = document.getElementById('myChart').getContext('2d');
         var myChart = new Chart(ctx, {
-            type: 'bar',
+            type: 'pie',
             data: {
-                labels: [{%for data in qs%}'{{data.full_Name}}',{%endfor%}],
+                labels: [{%for data in qs%}'{{data.city}}',{%endfor%}],
                 datasets: [{
                     label: '# of users',
                     data: [{%for data in qs%}{{data.num_users}},{%endfor%}],
@@ -45,6 +45,6 @@ $(document).ready(function(){
 {%endblock scripts%}
 
 {%block content%}
-<canvas id="myChart" width="400" height="100"></canvas>  
+<canvas id="myChart" width="500" height="200"></canvas>  
 {%endblock content%}
 

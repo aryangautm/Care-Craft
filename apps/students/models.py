@@ -27,7 +27,10 @@ class Student(models.Model):
     state = models.CharField(max_length=200, blank=True)
     # gender = models.CharField(max_length=10, choices=GENDER_CHOICES, default="male")
     date_of_birth = models.DateField(default=timezone.now)
-    disability = random.choice(["Yes", "No"])
+    disability = models.CharField(max_length=200, blank=True)
+
+
+    # disability = random.choice(["Yes", "No"])
     num_users = models.IntegerField()
 
 
@@ -73,7 +76,7 @@ class Student(models.Model):
     #     ordering = ["", "full_Name", "other_name"]
 
     def __str__(self):
-        return "{}-{}".format(self.full_Name, self.num_users)
+        return "{}-{}".format(self.full_Name, self.disability)
 
     # def __str__(self):
     #     return f"{self.surname} {self.full_Name} {self.other_name} ({self.registration_number})"
