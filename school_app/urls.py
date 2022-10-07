@@ -22,7 +22,7 @@ from charts.views import EditorChartView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", EditorChartView.as_view(), name="home"),
+    # path("", EditorChartView.as_view(), name="home"),
     path('charts', EditorChartView.as_view(), name='index'),
     path("accounts/", include("django.contrib.auth.urls")),
     path("", include("apps.corecode.urls")),
