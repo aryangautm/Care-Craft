@@ -27,11 +27,16 @@ class Student(models.Model):
     state = models.CharField(max_length=200, blank=True)
     # gender = models.CharField(max_length=10, choices=GENDER_CHOICES, default="male")
     date_of_birth = models.DateField(default=timezone.now)
-    disability = models.CharField(max_length=200, blank=True)
+    # disability = models.CharField(max_length=200, blank=True)
 
 
-    # disability = random.choice(["Yes", "No"])
+    rando = random.choice(["Yes", "No"])
     num_users = models.IntegerField()
+
+    def disability(self):
+        if self.rando == "Yes" or self.random == "No":
+            return random.choice(["Yes", "No"])
+
 
 
     # full_Name = models.CharField(max_length=200, blank=True, null=True)
