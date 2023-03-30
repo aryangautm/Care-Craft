@@ -9,7 +9,7 @@ $(document).ready(function(){
         var myChart = new Chart(ctx, {
             type: 'pie',
             data: {
-                labels: [{%for data in qs%}'{{data.city}}',{%endfor%}],
+                labels: [{%for data in qs%}'{{data.state}}',{%endfor%}],
                 datasets: [{
                     label: '# of users',
                     data: [{%for data in qs%}{{data.num_users}},{%endfor%}],

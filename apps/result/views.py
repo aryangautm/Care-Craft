@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect, render
 from django.views.generic import DetailView, ListView, View
+from django.db.models import Count
 
 from apps.students.models import Student
 
@@ -12,6 +13,14 @@ import random
 
 
 
+# fieldname = 'myCharField'
+# def testing(request):
+#     mydata = Student.objects.values('YES').annotate(count=Count('YES'))
+#     template = loader.get_template('template.html')
+#     context = {
+#         'mymembers': mydata,
+#      }
+#     return HttpResponse(template.render(context, request))
 
 @login_required
 def create_result(request):
